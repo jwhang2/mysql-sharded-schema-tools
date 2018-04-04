@@ -595,6 +595,9 @@ def main():
     if args.concurrency:
         settings.OPTIONS['concurrency'] = args.concurrency
 
+    if args.shards:
+       settings.OPTIONS['filter_shards'] = args.shards
+
     if args.type == 'alter':
         if not args.table:
             print "Table name must be provided with --table to perform alter operation"
@@ -650,4 +653,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
