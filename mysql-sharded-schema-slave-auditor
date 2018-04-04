@@ -36,8 +36,8 @@ def main():
     if settings.LOCATOR_TABLE['where_clause']:
         whereclause = " " + settings.LOCATOR_TABLE['where_clause']
 
-    sql = "select " + settings.LOCATOR_TABLE['shardname_col'] + ", " + settings.LOCATOR_TABLE['host_col'] + ", " \
-               + settings.LOCATOR_TABLE['port_col'] + " from " + settings.LOCATOR_TABLE['tablename'] + whereclause
+    sql = "select " + settings.LOCATOR_TABLE['shardname_col'] + ", " + settings.LOCATOR_TABLE['slave_host_col'] + ", " \
+               + settings.LOCATOR_TABLE['slave_port_col'] + " from " + settings.LOCATOR_TABLE['tablename'] + whereclause
     db.execute(sql)
     rows = db.fetchall()
     if not rows:
